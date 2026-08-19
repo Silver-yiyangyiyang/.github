@@ -33,6 +33,7 @@ flowchart LR
 | [`mobile-fraud-guard`](https://github.com/Silver-yiyangyiyang/mobile-fraud-guard) | 手机电诈防护模块 | 仓库骨架已建立；优先设计主动提交和求助入口，未接真实手机权限 |
 | [`community-fraud-guard`](https://github.com/Silver-yiyangyiyang/community-fraud-guard) | 社区诈骗核实模块 | 仓库骨架已建立；优先设计软件反馈和人工核实，未接真实社区数据 |
 | [`home-visit-fraud-guard`](https://github.com/Silver-yiyangyiyang/home-visit-fraud-guard) | 陌生人上门与入户防护模块 | 仓库骨架已建立；CP3 已购置，开放平台消息类型待实测 |
+| [`fraud-guard-shared`](https://github.com/Silver-yiyangyiyang/fraud-guard-shared) | 跨场景共享模块 | ASR、摄像头/EZVIZ 客户端、通用欺诈识别客户端与场景适配接口 |
 | [`silver-fraud-guard`](https://github.com/Silver-yiyangyiyang/silver-fraud-guard) | 即时融合与干预核心 | 统一事件契约、证据融合、分级提示、人工复核和受控验证 |
 | [`jbgs-proposal`](https://github.com/Silver-yiyangyiyang/jbgs-proposal) | 项目计划书 | 总体目标、数据路线、阶段清单、验证方案和成果边界 |
 
