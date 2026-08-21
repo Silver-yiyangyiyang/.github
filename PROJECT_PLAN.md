@@ -34,6 +34,8 @@
 
 2026-08-22 进展：Community #7/#8 已合并、Silver #11/#17 已 Ranked 关闭、Silver #16 部署与合成 smoke 已完成、Mobile #9 无人值守部分已完成、Home #2 实体设备 H2-H5 已真实走通、mobile/community 的 shared 依赖钉点已回修、Clients #4 已合并。前端三端重构（老人端/家属端/社区端，同小程序按登录身份分老人/家属界面，社区为 Web）已登记为 fraud-guard-clients #8-#11，交由前端负责人实现。
 
+2026-08-22 后端功能进展：Silver 新增登录身份（auth/login+me）、通知契约（notifications）、门外对话（door-talk，family/community，社区需家属授权 scope=community_door_access）；Home 新增看监控（camera snapshot/live，社区同样需家属授权）；fraud-guard-clients 共享 API 客户端已接 login/notifications/door-talk/camera 方法，并整理 FRONTEND_API.md 接口清单。前端三端 UI、真实 ERTC/HLS 媒体传输、微信登录与订阅消息接入仍待前端负责人与真机联调。
+
 | 顺序 | Lifecycle | Priority | 任务与责任仓库 | 进入下一状态的条件 |
 |---|---|---|---|---|
 | 1 | Pending | P0 | [Community #8](https://github.com/Silver-yiyangyiyang/community-fraud-guard/issues/8)：修正 PR #7 的门前设备消费边界和提交门禁 | 文档/API/测试一致，全仓检查与跨仓合成 HTTP 通过，PR #7 可评审 |
