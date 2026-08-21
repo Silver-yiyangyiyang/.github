@@ -2,7 +2,7 @@
 
 版本：V1.0
 
-状态基线：2026-08-21
+状态基线：2026-08-22
 
 计划维护：组织 `.github` 与 `jbgs-proposal` 同步维护；具体实现状态以各仓库 Issue、PR 和 `main` 为准。
 
@@ -23,13 +23,16 @@
 | `jbgs-proposal` | `a87193d` | V3.2 计划书和 32 页评审 PDF 可生成；最终提交包未完成 |
 | `elderly-fraud-risk-system` | `0143efa` | G1-G6 工程机制、画像 v2 与覆盖层消费已进入主线；58 项回归通过 |
 | `mobile-fraud-guard` | `ef1094c` | 纯后端、质量门、实验候选、规则兜底和影子模式已进入主线；27 项干净环境回归通过 |
-| `community-fraud-guard` | `4eb052e` | 本地登记、居民反馈、人工核实和住户授权门前设备事件闭环可运行；PR #7 待修正边界 |
-| `home-visit-fraud-guard` | `ee12fbc` | 授权门前音频/行为证据、Silver 提交和工程回归进入主线；实体设备回调未验收 |
+| `community-fraud-guard` | `5aedab4` | 住户授权门前设备消费边界与融合提交已合并；shared 依赖钉到当前提交 |
+| `home-visit-fraud-guard` | `cdc3486` | 授权门前证据、Silver 提交、alarmType 落库已进入主线；实体设备回调已真实走通 H2-H5 |
 | `fraud-guard-shared` | `418e6ec` | Home/Community 共用门前采集、ASR、场景适配与 Ruff 基线进入主线 |
-| `silver-fraud-guard` | `ed2cae4` | 多事件聚合、事件证据门槛、回放、三端反馈和画像回退进入主线；35 项回归及 7 项本地 HTTP 契约通过 |
-| `fraud-guard-clients` | `663b9b6` | Web/微信小程序合成 MVP、14 项契约测试、构建及 6 项 Silver 合成 HTTP 联调通过 |
+| `silver-fraud-guard` | `b40d4dc` | 多事件聚合、附件受控入口、生产 API 安全基线进入主线；62 项回归通过 |
+| `fraud-guard-clients` | `5799cc8` | Web 社区端与小程序老人端合成 MVP；前端三端重构交给前端负责人 |
+| `mobile-fraud-guard` | `d0e7d08` | 纯后端、授权门禁、泄漏审计、影子模式和评估报告（含 CI/失败样本）进入主线 |
 
 ## 三、执行队列与依赖
+
+2026-08-22 进展：Community #7/#8 已合并、Silver #11/#17 已 Ranked 关闭、Silver #16 部署与合成 smoke 已完成、Mobile #9 无人值守部分已完成、Home #2 实体设备 H2-H5 已真实走通、mobile/community 的 shared 依赖钉点已回修、Clients #4 已合并。前端三端重构（老人端/家属端/社区端，同小程序按登录身份分老人/家属界面，社区为 Web）已登记为 fraud-guard-clients #8-#11，交由前端负责人实现。
 
 | 顺序 | Lifecycle | Priority | 任务与责任仓库 | 进入下一状态的条件 |
 |---|---|---|---|---|
