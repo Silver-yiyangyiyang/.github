@@ -36,6 +36,8 @@
 
 2026-08-22 后端功能进展：Silver 新增登录身份（auth/login+me）、通知契约（notifications）、门外对话（door-talk，family/community，社区需家属授权 scope=community_door_access）；Home 新增看监控（camera snapshot/live，社区同样需家属授权）；fraud-guard-clients 共享 API 客户端已接 login/notifications/door-talk/camera 方法，并整理 FRONTEND_API.md 接口清单。前端三端 UI、真实 ERTC/HLS 媒体传输、微信登录与订阅消息接入仍待前端负责人与真机联调。
 
+2026-08-22 模型进展：fraud-guard-shared 新增 `FraudModelService` / `GeneralFraudAdapter`，mobile/home-visit/community 三个场景适配器已支持可选加载 shared 泛化模型并保留各自特化。多来源候选（天池 + FGRC + ChiFraud）已训练，ChiFraud t2022 诈骗召回 98.6%、t2023 65.0%，并完成 shared 与 primary 的影子对比。Silver 增加 `training_consent`、`training_examples` 和 `/api/v1/learning/examples`，支持家属/社区审核打回样本回流；逐项撤回训练授权会从导出集中剔除对应样本。elderly-fraud-risk-system 增加 `silver_event_ingest` 表和 `ingest_silver_events.py`，默认 dry-run 的观察层导入已具备。当前测试基线：shared 15、mobile 30、home 24、community 19、silver 73、elderly 33。
+
 | 顺序 | Lifecycle | Priority | 任务与责任仓库 | 进入下一状态的条件 |
 |---|---|---|---|---|
 | 1 | Pending | P0 | [Community #8](https://github.com/Silver-yiyangyiyang/community-fraud-guard/issues/8)：修正 PR #7 的门前设备消费边界和提交门禁 | 文档/API/测试一致，全仓检查与跨仓合成 HTTP 通过，PR #7 可评审 |

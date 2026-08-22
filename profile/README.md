@@ -32,11 +32,11 @@ flowchart LR
 | 仓库 | 定位 | 当前工作 |
 | --- | --- | --- |
 | [`elderly-fraud-risk-system`](https://github.com/Silver-yiyangyiyang/elderly-fraud-risk-system) | 超前预警子系统 | 多维画像、动态近况、四级预警、解释建议和人工处置闭环 |
-| [`mobile-fraud-guard`](https://github.com/Silver-yiyangyiyang/mobile-fraud-guard) | 手机电诈防护模块 | 主动提交、数据质检、实验模型、规则兜底、推理 API 和旁路影子模式已建立；未接真实手机权限，训练授权仍待核验 |
+| [`mobile-fraud-guard`](https://github.com/Silver-yiyangyiyang/mobile-fraud-guard) | 手机电诈防护模块 | 主动提交、数据质检、实验模型、规则兜底、推理 API、旁路影子模式和多来源训练已建立；已可选加载 shared 泛化模型，未接真实手机权限，训练授权仍待核验 |
 | [`community-fraud-guard`](https://github.com/Silver-yiyangyiyang/community-fraud-guard) | 社区诈骗核实模块 | 软件登记、居民反馈、人工核实和住户授权门前设备事件消费闭环已建立；没有公共区域设备，Silver 配套 PR 待修正 |
 | [`home-visit-fraud-guard`](https://github.com/Silver-yiyangyiyang/home-visit-fraud-guard) | 陌生人上门与入户防护模块 | 授权门前音频、抓拍/行为证据、场景适配和 Silver 提交已进入主线；实体设备回调仍待验收 |
-| [`fraud-guard-shared`](https://github.com/Silver-yiyangyiyang/fraud-guard-shared) | 跨场景共享模块 | 已提供 Home/Community 共用的门前 FLV AAC、16 kHz WAV、抓拍、ASR 和场景适配；不提供公共区域设备能力 |
-| [`silver-fraud-guard`](https://github.com/Silver-yiyangyiyang/silver-fraud-guard) | 即时融合与干预核心 | 多事件聚合、事件证据门槛、回放、三端反馈、画像 v2 回退和受控离线迭代已进入主线；Community 配套和生产部署待完成 |
+| [`fraud-guard-shared`](https://github.com/Silver-yiyangyiyang/fraud-guard-shared) | 跨场景共享模块 | 已提供门前 FLV AAC、16 kHz WAV、抓拍、ASR、场景适配，并新增 `FraudModelService` / `GeneralFraudAdapter` 作为泛化欺诈识别基座；不提供公共区域设备能力 |
+| [`silver-fraud-guard`](https://github.com/Silver-yiyangyiyang/silver-fraud-guard) | 即时融合与干预核心 | 多事件聚合、事件证据门槛、回放、三端反馈、画像 v2 回退、训练授权/回灌导出和老人求助接口已实现；Community 配套和生产部署待完成 |
 | [`fraud-guard-clients`](https://github.com/Silver-yiyangyiyang/fraud-guard-clients) | Web 与微信小程序 | 合成 MVP、共享契约、构建及 Silver 合成 HTTP 联调已合并；生产域名和微信真机待验收 |
 | [`jbgs-proposal`](https://github.com/Silver-yiyangyiyang/jbgs-proposal) | 项目计划书 | 总体目标、数据路线、阶段清单、验证方案和成果边界 |
 
