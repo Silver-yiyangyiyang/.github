@@ -38,6 +38,8 @@
 
 ## 三、执行队列与依赖
 
+2026-08-23 进展：jbgs-proposal #18 已合并（可移植发布证据运行器，仅标准库、本地/生产双裁决、去敏输出）；登记 fraud-guard-shared #8『优化识别模型』目标（提升 t2023 分布漂移、FBS 风险语料与审核打回样本回流训练）。
+
 2026-08-22 进展：Community #7/#8 已合并、Silver #11/#17 已 Ranked 关闭、Silver #16 部署与合成 smoke 已完成、Mobile #9 无人值守部分已完成、Home #2 实体设备 H2-H5 已真实走通、mobile/community 的 shared 依赖钉点已回修、Clients #4 已合并。前端三端重构（老人端/家属端/社区端，同小程序按登录身份分老人/家属界面，社区为 Web）已登记为 fraud-guard-clients #8-#11，交由前端负责人实现。
 
 2026-08-22 后端功能进展：Silver 新增登录身份（auth/login+me）、通知契约（notifications）、门外对话（door-talk，family/community，社区需家属授权 scope=community_door_access）；Home 新增看监控（camera snapshot/live，社区同样需家属授权）；fraud-guard-clients 共享 API 客户端已接 login/notifications/door-talk/camera 方法，并整理 FRONTEND_API.md 接口清单。前端三端 UI、真实 ERTC/HLS 媒体传输、微信登录与订阅消息接入仍待前端负责人与真机联调。
@@ -57,6 +59,7 @@
 | 9 | Pending/Frontend | P2 | [Mobile #11](https://github.com/Silver-yiyangyiyang/mobile-fraud-guard/issues/11)：交接旧前端 PR #1 | 与 Clients 去重，不携带被 PR #8 替代的后端，PR #1 收口 |
 | 10 | WIP | P1 | [Proposal #10](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/10)：收口 D1-D6 与最终提交包 | 同版本源码、计划书、报告、清单和自动去敏构建全部通过 |
 | 11 | Pending/Requires Human | P1 | [Proposal #13](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/13)：答辩材料与平台上传 | PPT、演示脚本、最终复核和赛事平台上传由在场人员完成 |
+| 12 | Pending | P1 | [Shared #8](https://github.com/Silver-yiyangyiyang/fraud-guard-shared/issues/8)：优化识别模型（跨域泛化与分布漂移） | 多来源重训练+冻结评估：ChiFraud t2023 召回 ≥ 0.80 且天池/FGRC/t2022 召回 ≥ 0.95、FPR ≤ 0.01；G0+G1 通过，影子对比与人工验收后切换 |
 
 ## 四、阶段计划
 
