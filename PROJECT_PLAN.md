@@ -51,15 +51,17 @@
 | 1 | Pending | P0 | [Community #8](https://github.com/Silver-yiyangyiyang/community-fraud-guard/issues/8)：修正 PR #7 的门前设备消费边界和提交门禁 | 文档/API/测试一致，全仓检查与跨仓合成 HTTP 通过，PR #7 可评审 |
 | 2 | Qualified | P0 | [Silver #11](https://github.com/Silver-yiyangyiyang/silver-fraud-guard/issues/11)：完成三场景多事件融合收口 | Community 配套进入 `main`，Home+Community 同一显式 `case_reference` 本地回归通过后 Ranked |
 | 3 | Pending/Blocked | P0 | [Silver #16](https://github.com/Silver-yiyangyiyang/silver-fraud-guard/issues/16)：服务器部署与远端合成验收 | Community #8/#7 完成且恢复安全 SSH 登录；记录版本、健康、契约和回滚点 |
-| 4 | Pending/Blocked | P1 | [Home #2](https://github.com/Silver-yiyangyiyang/home-visit-fraud-guard/issues/2)：实体门前设备端到端验收 | 恢复服务器/设备访问；使用住户自管门前设备和去敏报告完成回调验收 |
+| 4 | Qualified | P1 | [Home #2](https://github.com/Silver-yiyangyiyang/home-visit-fraud-guard/issues/2)：实体门前设备端到端验收 | 已完成服务器端到端（alarmType/camera/live/door-talk/H5 融合 CASE-9CE197E0D73E）；剩浏览器/小程序人工观感复测后 Ranked |
 | 5 | Pending | P1 | [Mobile #9](https://github.com/Silver-yiyangyiyang/mobile-fraud-guard/issues/9)：训练授权与独立验证门禁 | 授权登记、不可变 manifest、泄漏审计与独立评估报告通过 |
 | 6 | Pending/Requires Human | P1 | [Mobile #10](https://github.com/Silver-yiyangyiyang/mobile-fraud-guard/issues/10)：手机权限与真机安全回退 | 授权/拒绝/撤回三路径真机通过；日志去敏；无权限回退可用 |
 | 7 | Pending | P1 | [Silver #17](https://github.com/Silver-yiyangyiyang/silver-fraud-guard/issues/17)：生产 API 安全与数据治理 | 鉴权、越权、速率、重放、撤回/删除、Secret 与部署安全检查通过 |
-| 8 | Pending/Requires Human | P1 | [Clients #3](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/issues/3)：微信真机与生产域名 | 真机、合法域名、授权撤回和真实后端连接通过 |
+| 8 | Ranked/Closed | P1 | [Clients #3](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/issues/3)：微信真机与生产域名 | 已完成：strict 生产就绪门禁 passed（Android+iOS 双平台 7 项真机全过）；已关闭 |
 | 9 | Pending/Frontend | P2 | [Mobile #11](https://github.com/Silver-yiyangyiyang/mobile-fraud-guard/issues/11)：交接旧前端 PR #1 | 与 Clients 去重，不携带被 PR #8 替代的后端，PR #1 收口 |
 | 10 | WIP | P1 | [Proposal #10](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/10)：收口 D1-D6 与最终提交包 | 同版本源码、计划书、报告、清单和自动去敏构建全部通过 |
 | 11 | Pending/Requires Human | P1 | [Proposal #13](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/13)：答辩材料与平台上传 | PPT、演示脚本、最终复核和赛事平台上传由在场人员完成 |
 | 12 | WIP | P1 | [Shared #8](https://github.com/Silver-yiyangyiyang/fraud-guard-shared/issues/8)：优化识别模型（跨域泛化与分布漂移） | 候选 v2 冻结评估：t2023 召回 ≥ 0.78 且天池/FGRC/t2022 召回 ≥ 0.95、FPR ≤ 0.02；影子对比、Silver 回流闭环与人工验收后切换 |
+| 13 | Pending/Frontend | P2 | [Clients #47](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/issues/47)：正式 UI（UI 素材 + 前端实现三端） | UI 设计师提供设计 token/三端页面/空态错误态/适老化素材；前端实现与回归不破坏；真机观感复核 |
+| 14 | Pending/Frontend | P2 | [Clients #48](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/issues/48)：内嵌萤石微信小程序插件（预览/回放/对讲/云台） | 微信公众平台添加插件 `wxf2b3a0262975d8c2`；与现有 camera/door-talk 契约对齐；冲突时先对比 ERTC/HLS 再切换 |
 
 ## 四、阶段计划
 
