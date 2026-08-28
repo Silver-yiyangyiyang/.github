@@ -35,6 +35,8 @@
 
 注：以上 SHA 为 2026-08-28 查询到的 `main` 快照；开放 PR 的能力不计入 `main` 已完成项。
 
+`main` 在 2026-08-29 追加了一段无人值守跨仓进展。其中把 Clients #72/#80 写成已合并，这与当前开放 PR 不符：[Clients #71](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/issues/71) 仍由 [PR #74](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/pull/74) 推进，[#80](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/issues/80) 仍由 [PR #94](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/pull/94) 推进。不要把开放 PR 计入上表已完成项。
+
 ## 三、完成度与赛题契合度
 
 | 工作面 | 判断区间 | 结论 | 当前最重要缺口 |
