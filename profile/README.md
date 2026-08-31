@@ -4,7 +4,7 @@
 
 项目以“**超前预警 + 即时情景预警**”为核心：既关注老人在诈骗接触发生前是否进入易受骗状态，也关注具体接触过程中是否出现索要验证码、要求转账、诱导安装、可疑链接、身份冒充和制造紧迫感等危险信号。
 
-当前统一优先级、依赖和证据门禁见[项目计划](../PROJECT_PLAN.md)。
+当前统一优先级、依赖和证据门禁见[项目计划](../PROJECT_PLAN.md)。仍缺的微信真机、门前观感和人机核验见[真机待验总清单](../REAL_DEVICE_PENDING.md)。
 
 ## 双阶段与三场景协同
 
@@ -24,7 +24,7 @@ flowchart LR
 
 - **超前预警子系统**：根据老人基本情况、家庭支持、信息暴露、既往经历和近期变化，形成长期易感画像、四级预警、原因解释和人工处置建议。
 - **三类当前事件入口**：手机端优先采用转发、截图/粘贴和求助键；社区端优先采用人员/活动登记、居民反馈和人工核实；上门场景优先在业主自管区域接入 CP3 门前事件与可选门状态。
-- **即时融合与个性化干预核心**：显式共同案例引用、多场景事件聚合、事件级证据门槛、回放、三端反馈、审计和画像回退已经进入主线；当前等待 Community 配套和生产部署验收。
+- **即时融合与个性化干预核心**：显式共同案例引用、多场景事件聚合、事件级证据门槛、回放、三端反馈、审计和画像回退已经进入主线；订阅消息真机送达与三端同案回放仍待现场验收。
 - **对照验证**：对相同画像和情景比较无提示、通用提示与个性化提示，区分合成模拟结果、真人宣教测试和真实部署效果。
 
 ## 项目仓库
@@ -33,11 +33,11 @@ flowchart LR
 | --- | --- | --- |
 | [`elderly-fraud-risk-system`](https://github.com/Silver-yiyangyiyang/elderly-fraud-risk-system) | 超前预警子系统 | 多维画像、动态近况、四级预警、解释建议和人工处置闭环 |
 | [`mobile-fraud-guard`](https://github.com/Silver-yiyangyiyang/mobile-fraud-guard) | 手机电诈防护模块 | 主动提交、数据质检、实验模型、规则兜底、推理 API、旁路影子模式和多来源训练已建立；已可选加载 shared 泛化模型，未接真实手机权限，训练授权仍待核验 |
-| [`community-fraud-guard`](https://github.com/Silver-yiyangyiyang/community-fraud-guard) | 社区诈骗核实模块 | 软件登记、居民反馈、人工核实和住户授权门前设备事件消费闭环已建立；没有公共区域设备，Silver 配套 PR 待修正 |
-| [`home-visit-fraud-guard`](https://github.com/Silver-yiyangyiyang/home-visit-fraud-guard) | 陌生人上门与入户防护模块 | 授权门前音频、抓拍/行为证据、场景适配和 Silver 提交已进入主线；实体设备回调仍待验收 |
+| [`community-fraud-guard`](https://github.com/Silver-yiyangyiyang/community-fraud-guard) | 社区诈骗核实模块 | 软件登记、居民反馈、人工核实和住户授权门前设备事件消费闭环已建立；没有公共区域设备 |
+| [`home-visit-fraud-guard`](https://github.com/Silver-yiyangyiyang/home-visit-fraud-guard) | 陌生人上门与入户防护模块 | 授权门前音频、抓拍/行为证据、场景适配和 Silver 提交已进入主线；指定设备后端 L2 已做过，小程序/浏览器观感仍待真机 |
 | [`fraud-guard-shared`](https://github.com/Silver-yiyangyiyang/fraud-guard-shared) | 跨场景共享模块 | 已提供门前 FLV AAC、16 kHz WAV、抓拍、ASR、场景适配，并新增 `FraudModelService` / `GeneralFraudAdapter` 作为泛化欺诈识别基座；不提供公共区域设备能力 |
-| [`silver-fraud-guard`](https://github.com/Silver-yiyangyiyang/silver-fraud-guard) | 即时融合与干预核心 | 多事件聚合、事件证据门槛、回放、三端反馈、画像 v2 回退、训练授权/回灌导出和老人求助接口已实现；Community 配套和生产部署待完成 |
-| [`fraud-guard-clients`](https://github.com/Silver-yiyangyiyang/fraud-guard-clients) | Web 与微信小程序 | 合成 MVP、共享契约、构建及 Silver 合成 HTTP 联调已合并；生产域名和微信真机待验收 |
+| [`silver-fraud-guard`](https://github.com/Silver-yiyangyiyang/silver-fraud-guard) | 即时融合与干预核心 | 多事件聚合、事件证据门槛、回放、三端反馈、画像 v2 回退、训练授权/回灌导出和老人求助接口已实现；订阅消息真机送达与三端同案回放仍待现场验收 |
+| [`fraud-guard-clients`](https://github.com/Silver-yiyangyiyang/fraud-guard-clients) | Web 与微信小程序 | 三角色页面、共享契约和正式 UI 已进入主线；指定真机登录/域名已验收，完整走查、半屏直播和正式提审仍待现场 |
 | [`jbgs-proposal`](https://github.com/Silver-yiyangyiyang/jbgs-proposal) | 项目计划书 | 总体目标、数据路线、阶段清单、验证方案和成果边界 |
 
 部分仓库为团队内部协作仓库，访问权限以组织设置为准。
@@ -84,8 +84,8 @@ flowchart LR
 
 ## 当前收口重点
 
-1. 由 Community 负责人修正 PR #7 的门前设备消费边界和未核验提交门禁，再完成三场景融合收口；
-2. 恢复安全服务器/设备访问，完成 Silver 远端部署和 Home 实体门前设备回调；
-3. 核验 Mobile 训练授权、独立验证集与系统级电话/短信权限，失败时保持规则和主动提交回退；
-4. 完成 Silver 生产 API 安全基线，以及 Web/小程序生产域名和微信真机验收；
+1. 现场按 [真机待验总清单](../REAL_DEVICE_PENDING.md) 补齐微信真机、门前半屏/直播观感、订阅送达和授权撤回；未齐之前不要关闭对应 Issue。
+2. 文档与计划书类任务（命名门禁、提交清单、隐私收口口头口径上幻灯）可与真机并行；冻结前不要追着 main 改 `jbgs-submission`。
+3. Mobile 训练授权保持 `unverified` 直到书面授权与真实样本周期完成；失败时保留规则和主动提交回退。
+4. 萤石 Token Switch / 智能体条款未核验前，不打开真实 HTTP，不把影子或模板测试写成生产干预。
 5. 按同一版本锁定计划书、去敏提交包、答辩材料和平台回执，并严格区分模拟、真人和真实部署证据。
