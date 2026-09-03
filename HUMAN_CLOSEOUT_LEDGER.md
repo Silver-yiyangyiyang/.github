@@ -3,7 +3,8 @@
 跟踪：[`.github` #12](https://github.com/Silver-yiyangyiyang/.github/issues/12)  
 关联：隐私收口 [#7](https://github.com/Silver-yiyangyiyang/.github/issues/7)、真机总表 [`REAL_DEVICE_PENDING.md`](REAL_DEVICE_PENDING.md)、计划书 [`SUBMISSION_CHECKLIST.md`](https://github.com/Silver-yiyangyiyang/jbgs-proposal/blob/main/docs/SUBMISSION_CHECKLIST.md)
 
-> 状态基线：**2026-09-03**。已宣布**竞赛功能开发完成冻结**，进入拍摄演示视频与人工提交收口。本表只建去敏索引；签字/盖章/上传仍为**待签 / 待上传**，不得把口头确认写成已签字。  
+> 状态基线：**2026-09-03**。已宣布**竞赛功能开发完成冻结**，进入拍摄演示视频与人工提交收口。本表只建去敏索引；签字/盖章/上传仍为**待签 / 待上传**，不得把口头确认写成已签字。
+>
 > 不写入实名、电话、住址、账号、回执原件、密钥或完整设备标识。原件只放受控存储，仓库只登 SHA-256。
 
 ## 冻结 SHA（功能冻结快照；录成片/上传前再钉最终提交）
