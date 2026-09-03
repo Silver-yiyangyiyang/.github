@@ -1,8 +1,10 @@
 # 耄耋反诈智盾统一项目计划
 
-版本：V1.1
+版本：V2.0
 
-状态基线：2026-08-28
+状态基线：2026-09-03
+
+**当前阶段：竞赛功能开发已完成冻结；进入拍摄演示视频与人工提交收口。**
 
 维护规则：组织 `.github` 与 `jbgs-proposal` 同步维护；实现状态以各仓库 `main`、开放 Issue、关联 PR 和可复核证据为准。成熟度区间是管理判断，不是赛事评分或精确完成率。
 
@@ -18,92 +20,90 @@
 4. 未核验训练授权的数据保持 `training_authorization=unverified`，不得进入发布训练；线上请求不得直接触发训练。
 5. 合成工程、历史调查、研究影子、实体设备、受控真人和真实部署证据必须分栏。自动测试不能替代老人可用性、自然场景效果或生产验收。
 6. 方言与粤语 ASR 只作为转写鲁棒性和公平性研究支撑，不是独立诈骗声学模型或画像特征；当前不得声明广州音、港音生产效果。
+7. **冻结纪律（2026-09-03）**：不再新增功能主线、新模型家族或小程序解冻实现（Clients #121 规划除外且不实现展示）；变更仅服务演示成片、签字盖章与平台上传。
 
-## 二、2026-08-28 可追溯快照
+## 二、2026-09-03 冻结快照（摘要）
 
-| 仓库 | `main` 基线 | 当前已证明状态 | 仍缺少 |
+| 仓库 | `main`（短 SHA） | 冻结口径 |
+|---|---:|---|
+| `.github` | `d4796f9` | 组织计划与人机收口清单 |
+| `jbgs-proposal` | `46dbba8` | 计划书 V3.4→本轮升 V3.5（冻结+视频阶段） |
+| `jbgs-submission` | `5191a73` | 八项材料初稿/大纲在仓；演示成片未拍 |
+| `elderly-fraud-risk-system` | `ae752c0` | 超前画像与 silver-ingest 入口已部署 |
+| `mobile-fraud-guard` | `8222db1` | 电诈后端主线保留；真机权限非本阶段功能开发 |
+| `community-fraud-guard` | `bbb27aa` | 社区核验与授权门前派生事件消费 |
+| `home-visit-fraud-guard` | `10a500c` | 门前设备、抓拍、对话预警生产路径 |
+| `fraud-guard-shared` | `d7d3ab7` | 共享 ASR/适配；方言研究仍非生产 |
+| `silver-fraud-guard` | `377931c` | 同案融合、BFF、learning 入口、生产账号登录 |
+| `fraud-guard-clients` | `8006cda` | 三端客户端；**微信小程序已冻结**；仅 #121 规划开放 |
+| `fraud-guard-showcase` | `e9f4a47` | 过程走查八步（含前递与受控迭代）可演示 |
+
+注：短 SHA 为 2026-09-03 查询到的 `origin/main` 摘要，录成片前再锁最终提交 commit。
+
+## 三、完成度与赛题契合度（冻结判断）
+
+| 工作面 | 判断区间 | 结论 | 本阶段动作 |
 |---|---:|---|---|
-| `.github` | `6cb5c13` | 组织入口、任务池和证据门禁已建立 | 本次计划更新合并后才成为新基线 |
-| `jbgs-proposal` | `35d0126` | V3.3 计划书、PDF、隐私清单和提交资料框架存在 | V3.4 同步、演示视频、报名表、答辩与平台回执 |
-| `elderly-fraud-risk-system` | `fec59f6` | 画像、问卷入口、subject 绑定与提示覆盖层已进入主线 | 生产变量、真实绑定、真机填写、授权真实样本和即时结果回写证据 |
-| `mobile-fraud-guard` | `8222db1` | 电诈后端、授权门禁、候选评估、影子模式与回流治理较成熟 | Issue #18 的授权真实样本完整周期、手机权限/真机和正式模型接受 |
-| `community-fraud-guard` | `fc69013` | 登记核实、处置回填与授权门前派生事件消费已形成 | 真实社区流程、自然场景误报/漏报和同案三端复核 |
-| `home-visit-fraud-guard` | `6c130b3` | 门前设备、抓拍、派生事件、camera/door-talk 路径有工程证据 | Issue #2 浏览器/小程序观感验收、#27 正式绑定、#28 停留/路人逻辑 |
-| `fraud-guard-shared` | `15a20c6` | 通用模型服务、场景适配与基础 ASR 已在主线 | Issue #33 / PR #34 尚未合并；方言/粤语仅研究影子，真实音频授权仍缺 |
-| `silver-fraud-guard` | `1767fdd` | 统一事件、同案融合、角色通知、授权和学习回流接口已形成 | Issue #52 微信三端同案回放、#53/#55 正式绑定与失败回退验收 |
-| `fraud-guard-clients` | `6960d7b` | 三角色 MVP、共享 API、登录绑定与新 UI 工作存在 | Issue #71 新布局功能尚未完全接线；微信真机、提审和正式发布需人工 |
+| 赛题与架构定位 | 90%–95% | 双阶段、三场景、同案融合与治理边界清晰 | 口播按主线，不扩方向 |
+| 核心后端与合成工程 | 85%–95% | 多仓主线与自动回归可演示 | 拍部署/健康检查，不新开功能 |
+| 模型与 ASR 研究 | 65%–75% | 研究影子可用；许可与口音边界不变 | 视频不宣称生产 ASR/口音效果 |
+| 设备与多模态集成 | 70%–85% | 授权门铃链路可演示 | 脱敏实拍；半屏须设备关加密 |
+| 正式前端与发布 | 75%–85% | Web/社区工作台与小程序开发版可演示；正式提审非本阶段 | 小程序保持冻结，只录现有包 |
+| 赛事材料与答辩 | 70%–85% | 研究报告/技术文档/测试与走查大纲齐备 | **拍成片**；签字/报名/平台上传 |
+| 真实场景验证 | 25%–40% | 仍以合成、受控设备与部署证据为主 | 分栏陈述；不宣称降低真实受骗率 |
 
-注：以上 SHA 为 2026-08-28 查询到的 `main` 快照；开放 PR 的能力不计入 `main` 已完成项。
+结论：竞赛范围内的**功能开发完成冻结**。当前唯一主执行线是**拍摄演示视频**，并并行完成签字盖章与平台上传等人工作业。不得把冻结写成“真实老人效果已验证”。
 
-`main` 在 2026-08-29 追加了一段无人值守跨仓进展。其中把 Clients #72/#80 写成已合并，这与当前开放 PR 不符：[Clients #71](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/issues/71) 仍由 [PR #74](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/pull/74) 推进，[#80](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/issues/80) 仍由 [PR #94](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/pull/94) 推进。不要把开放 PR 计入上表已完成项。
+## 四、ASR 研究结论与边界（不变）
 
-## 三、完成度与赛题契合度
+- AISHELL-3 / Common Voice 粤语结果与失败候选保留；SenseVoice 仅本地竞赛演示/研究范围。
+- `production_eligible=false`；不得声明广州/香港命名口音生产效果。
 
-| 工作面 | 判断区间 | 结论 | 当前最重要缺口 |
-|---|---:|---|---|
-| 赛题与架构定位 | 85%–95% | 诈骗方向、双系统、三场景、同案融合与治理边界清晰 | 减少仓库清单式叙述，突出老年用户、当前证据与分级干预 |
-| 核心后端与合成工程 | 80%–90% | 多仓核心接口和自动回归较成熟 | 统一一个 `subject_id` / `case_id` 的正式演示链 |
-| 模型与 ASR 研究 | 65%–75% | 有冻结评估、失败候选和研究影子结果 | 真实授权样本、正式接受、许可证生产边界与命名口音证据 |
-| 设备与多模态集成 | 55%–70% | 门前设备和派生事件已有实质证据 | 正式绑定、异常停留门槛、微信三端回放和完整观感 |
-| 正式前端与发布 | 55%–70% | 视觉重构和基础能力存在 | 新 UI 功能接线、真机与提审 |
-| 赛事材料与答辩 | 60%–75% | 计划书、离线材料和去敏构建已有基础 | 演示成片、报名表、答辩、平台上传与回执 |
-| 真实场景验证 | 20%–35% | 目前主要是合成、历史、设备和研究影子证据 | 书面授权真人、自然场景、撤回记录与真实部署效果 |
+## 五、当前执行队列（视频阶段）
 
-结论：项目没有在赛题方向上跑偏，当前主要风险是叙事偏航和证据越级。不得把工程回归写成降低真实受骗率，也不得把设备、ASR、账号绑定等支撑能力平铺成多个彼此竞争的主创新。
-
-## 四、ASR 研究结论与边界
-
-- AISHELL-3 普通话研究候选在平衡方言开发集 800 条上，整体规范化 CER 为 `0.091236`，最差方言层为 `0.091758`；数据和候选均保持研究用途、`production_eligible=false`。
-- Common Voice 粤语开发集 800 条上，SenseVoiceSmall 规范化 CER 为 `0.066364`；CPU RTF `0.063281`，与 CUDA 输出指标一致，具备研究影子可用性。
-- Whisper 粤语中型微调出现重复输出并被质量门拒绝；失败结果保留，不能选择性省略。
-- SenseVoice 许可审核只批准本项目本地竞赛演示/研究范围，不授权商业生产、私有化交付或权重再分发。
-- 广州与香港命名口音样本和说话人数均不足，元数据尚未人工策展，`ready_for_named_accent_claims=false`。
-
-## 五、当前执行队列
-
-| 顺序 | Lifecycle | Priority | 任务 | 进入下一状态的条件 |
+| 顺序 | Lifecycle | Priority | 任务 | 完成门槛 |
 |---|---|---|---|---|
-| 1 | WIP | P0 | [.github #9](https://github.com/Silver-yiyangyiyang/.github/issues/9)：同步完成度、赛题主线和计划书 | 两仓文档/PDF更新、检查通过并提交 PR 后进入 Qualified |
-| 2 | WIP / User-owned | P0 | [Clients #71](https://github.com/Silver-yiyangyiyang/fraud-guard-clients/issues/71)：新 UI 功能接线 | 老人/家属/社区关键入口使用真实共享 API；加载、空态、失败回退和身份边界可验收 |
-| 3 | Pending | P0 | [Silver #52](https://github.com/Silver-yiyangyiyang/silver-fraud-guard/issues/52)：三场景同案三端回放 | 一个显式 `subject_id`、一个 `case_id` 在微信老人/家属及社区 Web 可复核 |
-| 4 | Pending | P0 | [Mobile #18](https://github.com/Silver-yiyangyiyang/mobile-fraud-guard/issues/18) / [Shared #36](https://github.com/Silver-yiyangyiyang/fraud-guard-shared/issues/36)：授权真实样本与受控真人最小验证 | 书面授权、撤回、脱敏、分层、失败案例和独立报告齐备 |
-| 5 | Qualified / Awaiting review | P1 | [Shared #33](https://github.com/Silver-yiyangyiyang/fraud-guard-shared/issues/33) / [PR #34](https://github.com/Silver-yiyangyiyang/fraud-guard-shared/pull/34)：方言/粤语 ASR 研究门禁 | 人工确认研究价值、许可证边界和非生产表述后决定是否合并 |
-| 6 | Pending / Requires human | P1 | [Home #2](https://github.com/Silver-yiyangyiyang/home-visit-fraud-guard/issues/2)、#27、#28：门前正式验收 | 正式绑定、路人/停留门槛、浏览器/小程序观感及失败回退通过 |
-| 7 | WIP / Requires human | P1 | [Proposal #10](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/10)、#13、#17：锁版与提交 | 同版本 PDF/PPT/源码/报告/清单、演示、报名、平台回执齐备 |
+| 1 | WIP / Requires human | P0 | 按 `jbgs-submission`《演示视频脚本》拍七段成片 | 成片可复核；与冻结版本界面/读数一致；脱敏 |
+| 2 | WIP / Requires human | P0 | [.github #12](https://github.com/Silver-yiyangyiyang/.github/issues/12) 人工签名/盖章与平台上传总清单 | 签字页、报名表、回执齐备 |
+| 3 | WIP / Requires human | P1 | [Proposal #13](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/13) / [#17](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/17) 答辩与初审材料上传 | 同版本材料包 + 平台回执 |
+| 4 | Hold | — | Clients #121 干预影子呈现规划 | 冻结不实现；除非用户再次授权 |
+| 5 | Draft / Hold | — | Mobile #28 | 不整包合并 |
+
+已关闭、不再作为开放功能台账：Clients #22/#47/#51；Intervention #1/#2/#5 等（详见各 Issue 关闭评论）。
 
 ## 六、阶段计划
 
-### 阶段 A：文档与功能收口（立即）
+### 已完成：阶段 A–C（功能与材料工程收口）
 
-- `.github #9` 的 2026-08-28 计划同步已合入。真机/人机待验项已收口到 [`REAL_DEVICE_PENDING.md`](REAL_DEVICE_PENDING.md)，对应 Issue 在证据齐之前保持 OPEN。
-- 无人值守优先处理文档、契约、计划书和提交清单类 Issue；不要把下表真机项当成下一轮编码队列。
-- Clients #71：先接真实功能，再做真机观感；截图或静态页面不等于功能闭环。
-- 固定一条演示主线，不再新增独立场景或新模型家族。
+- 多仓主线合入与生产部署可达演示；Showcase 八步走查可用。
+- `jbgs-submission` 研究报告、技术文档、测试/验证说明、平台证据与视频大纲进仓。
+- 小程序完成约定例外后重新冻结；不新开小程序功能 PR。
 
-### 阶段 B：端到端与真实证据
+### 当前：阶段 D — 拍摄演示视频（立即）
 
-- 现场按 [`REAL_DEVICE_PENDING.md`](REAL_DEVICE_PENDING.md) §10 最短路径执行；完成 Silver #52 的同一案件三端回放。
-- 选择最小、可撤回的授权真实样本/受控真人方案；不进行真实转账，不保存不必要的原始媒体。
-- 完成门前页半屏/直播观感、订阅消息送达和授权撤回；条款未核验前不打开 Token Switch 真实 HTTP。
+按成片七段（顺序建议：开场 → A 前端 → B 后端 → E 部署实拍 → C 实操 → F 高低对照 → D 走查指标 → G 创新点 → 收束）：
 
-### 阶段 C：提交锁版
+1. 锁定演示用 commit / 小程序开发版号 / 生产健康检查时间戳。
+2. 现场按脚本录制；遮挡密钥、完整序列号、人脸与门牌。
+3. 口播对齐研究报告创新点与「当前事件证据 / 画像不改事实 / 受控迭代」。
+4. 成片编号写入测试报告与提交清单后，再推进平台上传。
 
-- 对 Shared PR #34 作人工接受或保留决定；无论结果如何，ASR 均保持研究影子表述。
-- 固定同一组 commit、PDF、测试报告和去敏源码包；重新生成校验清单。
-- 由在场负责人完成报名表、演示视频、答辩、平台上传和回执留存。去敏台账模板见 [`HUMAN_CLOSEOUT_LEDGER.md`](HUMAN_CLOSEOUT_LEDGER.md)；未宣布冻结前不要把任何一行写成已签。
+### 随后：阶段 E — 提交锁版与平台回执
+
+- 替换实名信息、签字盖章、报名表扫描件。
+- 固定同一组 commit、PDF、去敏源码包与视频文件校验。
+- 赛事平台上传并保留回执；未取得回执前不得宣称提交完成。
 
 ## 七、验收门禁
 
 | Gate | 证据 | 允许的完成声明 |
 |---|---|---|
-| G0 契约与静态检查 | schema、Ruff/构建、secret scan、`git diff --check` | 代码或文档结构可评审 |
-| G1 合成工程 | 单元/集成测试、真实本地 HTTP、固定合成样本 | 合成工程链路通过 |
-| G2 历史/研究影子 | 冻结切分、分层指标、失败候选、授权/许可边界 | 指定数据和候选的研究结果 |
-| G3 设备/受控真人 | 书面授权、设备/真机、撤回、脱敏、失败案例 | 指定设备或受控场景通过 |
-| G4 真实部署 | 合并提交、服务健康、远端契约、回滚、自然场景记录 | 指定版本工程部署通过，不自动等于效果显著 |
-| G5 最终提交 | PDF/PPT、演示、清单、报名表、平台回执 | 赛事材料提交完成 |
-
-只有“实现 + 自动验证 + 边界说明 + 可追溯交付”同时存在时，任务才可由 WIP 进入 Qualified；只有正式接受、合并且验收条件满足后才能进入 Ranked 并关闭 Issue。
+| G0 契约与静态检查 | schema、Ruff/构建、secret scan | 代码或文档结构可评审 |
+| G1 合成工程 | 单元/集成、本地 HTTP、固定合成样本 | 合成工程链路通过 |
+| G2 历史/研究影子 | 冻结切分、分层指标、失败候选、授权/许可 | 指定数据和候选的研究结果 |
+| G3 设备/受控真人 | 书面授权、设备/真机、撤回、脱敏 | 指定设备或受控场景通过 |
+| G4 真实部署 | 合并提交、服务健康、远端契约、回滚 | 指定版本工程部署通过 |
+| G5 最终提交 | PDF/PPT、**演示成片**、清单、报名表、平台回执 | 赛事材料提交完成 |
 
 ## 八、计划更新规则
 
@@ -111,11 +111,3 @@
 - 正式叙述变化时同步更新 `jbgs-proposal/README.md`、`plan.tex` 和重新编译的 `plan.pdf`。
 - 功能细节只在责任仓库维护；总体计划只引用 Issue、PR、commit 和证据等级。
 - 暂停工作必须在对应 Issue 留下 Checkpoint；聊天不是项目状态的唯一存储。
-
-## 九、2026-08-31 真机待验收口
-
-跨仓仍缺的微信真机、门前观感、订阅送达、权限撤回和条款核验，统一登记在 [`REAL_DEVICE_PENDING.md`](REAL_DEVICE_PENDING.md)，操作步骤仍用计划书仓 `docs/REAL_DEVICE_WALKTHROUGH.md`。
-
-- 查询日仍 OPEN、且关闭前至少要有真机/设备证据的 Issue 见该文件 §7。
-- 提审、报名盖章、书面授权原件、Token Switch 条款见该文件 §8，不要记成真机已过。
-- pytest、模拟器和 Playwright 见该文件 §9，只证明合成工程或本机联调。
