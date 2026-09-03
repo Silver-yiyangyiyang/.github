@@ -125,7 +125,7 @@
 |---|---|---|
 | 萤石 Token Switch / IoT 使用条款与租户契约 | intervention #2/#5 | 清单：`fraud-intervention-agent/docs/EZVIZ_TOKEN_SWITCH_MANUAL_CHECKLIST.md`；`TERMS_VERIFIED` 仍不得改为 true |
 | 微信小程序正式提审 | clients #45 | 人工操作微信公众平台 |
-| 演示视频实拍、报名表盖章、平台上传回执 | [proposal #17](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/17)、[#13](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/13)、[#10](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/10)、[`.github` #12](https://github.com/Silver-yiyangyiyang/.github/issues/12)、[jbgs-submission #2](https://github.com/Silver-yiyangyiyang/jbgs-submission/issues/2) | 冻结前不要追着 main 改提交包 |
+| 演示视频实拍、报名表盖章、平台上传回执 | [proposal #17](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/17)、[#13](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/13)、[#10](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/10)、[`.github` #12](https://github.com/Silver-yiyangyiyang/.github/issues/12)、[jbgs-submission #2](https://github.com/Silver-yiyangyiyang/jbgs-submission/issues/2) | **2026-09-03 功能已冻结；当前主任务是成片与人工收口** |
 | 六个核心子模块正式中文名 | [proposal #34](https://github.com/Silver-yiyangyiyang/jbgs-proposal/issues/34) | 双名已定；M1–M6 待负责人填写 |
 | 书面授权原件、答辩 PPT 上幻灯 | `.github` #7 | 模板与口头口径已有；原件和幻灯未收集 |
 | 正式模型接受 / 授权真实样本 | silver #67、mobile #18 | 分栏报告，不把影子写成生产 |
